@@ -404,13 +404,14 @@ ul {
 .scene-card {
   position: sticky;
   top: var(--card-top);
+  isolation: isolate;
   display: grid;
   grid-template-columns: 82px minmax(0, 1fr);
   gap: 1.2rem;
   padding: 1.3rem;
   border-radius: 34px;
   border: 1px solid var(--line);
-  background: rgba(255, 250, 242, 0.9);
+  background: var(--paper);
   box-shadow: 0 20px 54px rgba(91, 71, 48, 0.08);
 }
 
@@ -478,19 +479,19 @@ ul {
 .accent-sun {
   background:
     linear-gradient(135deg, rgba(242, 194, 111, 0.22), transparent 42%),
-    rgba(255, 250, 242, 0.9);
+    var(--paper);
 }
 
 .accent-sky {
   background:
     linear-gradient(135deg, rgba(198, 218, 247, 0.32), transparent 42%),
-    rgba(255, 250, 242, 0.9);
+    var(--paper);
 }
 
 .accent-leaf {
   background:
     linear-gradient(135deg, rgba(206, 217, 196, 0.32), transparent 42%),
-    rgba(255, 250, 242, 0.9);
+    var(--paper);
 }
 
 .process-layout {

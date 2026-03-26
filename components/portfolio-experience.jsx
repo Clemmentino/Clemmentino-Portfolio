@@ -4,57 +4,57 @@ import Image from "next/image";
 import { useEffect } from "react";
 
 const tickerItems = [
-  "Frontend-focused",
-  "Full-stack ready",
-  "Designer-led motion",
-  "Light interfaces",
-  "Interaction systems",
-  "Vercel build"
+  "PHP",
+  "UI design",
+  "Photography",
+  "Videography",
+  "Frontend systems",
+  "Government tech interest"
 ];
 
 const metrics = [
   {
-    label: "Primary lane",
-    value: "Frontend craft with stronger visual instinct"
+    label: "Focus",
+    value: "Frontend builds that feel clear, fast, and intentional"
   },
   {
     label: "Also brings",
-    value: "Backend logic when the project needs it"
+    value: "Backend connection work when the project needs the full flow"
   },
   {
-    label: "What matters",
-    value: "Interfaces that feel distinct and still easy to use"
+    label: "Interested in",
+    value: "Websites, frontend roles, and government tech with real-world use"
   }
 ];
 
 const projects = [
   {
-    title: "Runway Launch",
-    category: "Interactive website direction",
+    title: "Smart Campus Energy System",
+    category: "School project / Energy management platform",
     summary:
-      "A bright launch page built like a sequence of scenes, where each section lands with more intention and less clutter.",
+      "A campus energy monitoring platform built to track consumption, manage appliances, and automate schedules. I worked with Laravel, Vue, PHP, and Vite to shape the interface around analytics, room scheduling, and day-to-day operational visibility.",
     image: "/scene-preview-a.svg",
-    tags: ["Sticky sections", "Large-scale layout", "Soft contrast"],
+    tags: ["Laravel 12", "Vue 3", "Chart.js", "FullCalendar", "Queue workers"],
     accent: "sun",
     top: "1rem"
   },
   {
-    title: "Studio Flow",
-    category: "Product storytelling page",
+    title: "OceanWatch",
+    category: "School project / Marine advocacy website",
     summary:
-      "A cleaner system of windows, content rails, and interface panels that feels designed rather than assembled from blocks.",
+      "An SDG 14 advocacy website built to make marine conservation information easier to explore. It combines educational content, publication access, a volunteer flow, and a fully responsive UI for awareness-driven browsing.",
     image: "/scene-preview-b.svg",
-    tags: ["Interface rhythm", "Structured motion", "Editorial spacing"],
+    tags: ["HTML", "CSS", "JavaScript", "Bootstrap", "Responsive design"],
     accent: "sky",
     top: "2.3rem"
   },
   {
-    title: "Portrait Mode",
-    category: "Personal portfolio layout",
+    title: "LINDOL",
+    category: "Personal project / Earthquake monitoring system",
     summary:
-      "A personal site direction where the portrait becomes the anchor, the typography does the heavy lifting, and motion stays controlled.",
+      "A decoupled Philippine earthquake monitoring web app with a static frontend, Flask backend, PHIVOLCS-backed data flow, map overlays, intensity views, and wave-based alerts. It is built for fast situational awareness, with near real-time monitoring as the direction.",
     image: "/scene-preview-c.svg",
-    tags: ["Portrait-led", "Lighter mood", "Designer-first feel"],
+    tags: ["Flask", "Leaflet", "PHIVOLCS", "Vercel + Render", "Wave alerts"],
     accent: "leaf",
     top: "3.6rem"
   }
@@ -62,37 +62,37 @@ const projects = [
 
 const processSteps = [
   {
-    title: "Lead with a visual anchor",
+    title: "Start with the frontend experience",
     copy:
-      "The first fold should introduce a person, a point of view, and an atmosphere, not just a title and two buttons."
+      "I care a lot about how a page feels to use, so layout, motion, and interface clarity usually come first."
   },
   {
-    title: "Build sections like scenes",
+    title: "Connect the system cleanly",
     copy:
-      "Each area needs a job. Hero for identity, work for proof, process for depth, contact for conversion."
+      "I can work across the handoff between frontend and backend, especially in split deployments like Vercel for UI and Render for APIs."
   },
   {
-    title: "Use motion as pacing",
+    title: "Build for actual use cases",
     copy:
-      "The animation should help timing, hierarchy, and attention, not turn the page into a demo reel."
+      "What interests me most are projects that need to be useful in the real world, especially monitoring, public-interest, and government-adjacent systems."
   }
 ];
 
 const capabilityNotes = [
   {
-    title: "Frontend systems",
+    title: "Frontend and UI",
     copy:
-      "Responsive layouts, animation timing, component polish, and the small visual decisions that make a build feel intentional."
+      "I focus most on the frontend: layout, interface decisions, responsiveness, and making the whole build feel more thought-through."
   },
   {
-    title: "Backend support",
+    title: "PHP and backend integration",
     copy:
-      "I can handle the logic side too, which helps the work stay coherent beyond the visual layer."
+      "I am comfortable wiring frontend and backend together, especially in web stacks where the interface and server need to stay cleanly connected."
   },
   {
-    title: "Taste and structure",
+    title: "Visual work too",
     copy:
-      "I care about how typography, composition, and interaction fit together into one clear experience."
+      "UI design, photography, editing, and videography all feed into how I think about presentation and visual quality."
   }
 ];
 
@@ -152,7 +152,7 @@ export default function PortfolioExperience() {
         <header className="topbar" data-reveal>
           <div className="brand-lockup">
             <span className="brand-dot" />
-            <span className="brand-name">Clemmentino</span>
+            <span className="brand-name">Clemmentino Portfolio</span>
           </div>
           <nav className="topnav" aria-label="Section navigation">
             <a href="#work">Work</a>
@@ -164,11 +164,18 @@ export default function PortfolioExperience() {
         <div className="hero-panel">
           <div className="hero-copy" data-reveal>
             <p className="eyebrow">Frontend-focused full-stack developer</p>
-            <h1>Designer energy, developer follow-through.</h1>
+            <h1>Built to work. Made to feel clear.</h1>
             <p className="lede">
-              I build websites that feel lighter, sharper, and more interactive
-              than the usual portfolio layouts. Frontend is where I'm strongest,
-              but I can carry backend work when the build needs it.
+              I'm Clemmentino, a frontend-focused full-stack developer who cares
+              about websites that feel clear, modern, and actually useful.
+              Frontend is where I'm strongest, but I can handle the backend
+              connection too, especially for systems that need a real working
+              flow.
+            </p>
+            <p className="lede">
+              I'm especially interested in websites, frontend roles, and
+              government tech, including near real-time earthquake and warning
+              systems.
             </p>
 
             <div className="hero-actions">
@@ -203,8 +210,8 @@ export default function PortfolioExperience() {
                 className="portrait-image"
               />
             </figure>
-            <div className="name-ribbon">Clemmentino / frontend-focused full-stack</div>
-            <div className="note-badge">light + interactive + personal</div>
+            <div className="name-ribbon">Clemmentino / frontend-focused full-stack developer</div>
+            <div className="note-badge">creative but minimal, with real build depth</div>
           </div>
         </div>
       </section>
@@ -222,7 +229,7 @@ export default function PortfolioExperience() {
       <section className="scenes section-frame" id="work">
         <div className="section-intro" data-reveal>
           <p className="eyebrow">Selected Work</p>
-          <h2>Built like a runway of scenes instead of a stack of generic cards.</h2>
+          <h2>From school systems to a personal earthquake-monitoring project.</h2>
         </div>
 
         <div className="scene-stack">
@@ -268,10 +275,11 @@ export default function PortfolioExperience() {
         <div className="process-layout">
           <aside className="process-intro" data-reveal>
             <p className="eyebrow">Process</p>
-            <h2>I want the site to feel directed, not auto-generated.</h2>
+            <h2>I want the work to prove I can build, not just decorate.</h2>
             <p>
-              That means choosing a clear mood, giving the portrait a purpose,
-              and letting the sections unfold with control instead of noise.
+              The best outcome for me is something that looks considered on the
+              surface and still holds up once real data, logic, and deployment
+              are involved.
             </p>
           </aside>
 
@@ -302,10 +310,10 @@ export default function PortfolioExperience() {
         <div className="contact-panel" data-reveal>
           <div className="contact-copy">
             <p className="eyebrow">Contact</p>
-            <h2>Now the next step is replacing the placeholders with your real projects.</h2>
+            <h2>I'm building toward stronger frontend work and public-interest systems.</h2>
             <p>
-              The structure is finally different. What will make it yours is
-              your actual project names, screenshots, and links.
+              LINDOL is the current personal project. After that, the next build
+              in line is a Local Flood Warning System.
             </p>
           </div>
 
@@ -319,8 +327,16 @@ export default function PortfolioExperience() {
                 className="portrait-image"
               />
             </div>
-            <a href="mailto:hello@clemmentino.dev" className="primary-link">
-              hello@clemmentino.dev
+            <a href="mailto:mamoamoguis@gmail.com" className="primary-link">
+              mamoamoguis@gmail.com
+            </a>
+            <a
+              href="https://github.com/clemmentino"
+              className="secondary-link"
+              target="_blank"
+              rel="noreferrer"
+            >
+              github/clemmentino
             </a>
           </div>
         </div>
