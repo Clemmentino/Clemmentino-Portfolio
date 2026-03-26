@@ -1,20 +1,20 @@
 # Clemmentino Portfolio
 
-A premium single-page portfolio built with Next.js and designed for Vercel deployment.
+A light, interactive portfolio built with Next.js and designed for Vercel deployment.
 
-The site follows an Apple-meets-Awwwards direction:
-- cinematic hero section
-- scroll-driven reveals
-- sticky storytelling layout
-- premium case-study presentation
-- responsive, performance-friendly frontend
+The current direction is:
+- portrait-led hero
+- designer-forward layout
+- light editorial palette
+- dashboard-inspired project presentation
+- responsive motion and interaction
 
 ## Tech Stack
 
 - Next.js 16
 - React 19
 - App Router
-- Custom CSS with layered gradients, glass panels, and scroll-based motion
+- Custom CSS with a light visual system, layered panels, and interactive motion
 
 ## Local Development
 
@@ -82,9 +82,11 @@ If you want to make the portfolio fully yours, start here:
   Update the metadata title and description for search and link previews.
 - `app/globals.css`
   Adjust colors, spacing, typography feel, and motion styling.
+- `public/me.jpg`
+  Replace the portrait if you want a different hero image.
 
 ## Notes
 
-- The current project cards use concept content and placeholder case studies.
+- The current project cards still use placeholder names and placeholder case studies.
 - The contact email is a placeholder and should be replaced before deployment.
 - The build has already been verified locally with `npm run build`.
