@@ -21,7 +21,6 @@
   --card-pad: clamp(1.25rem, 1vw + 1rem, 1.85rem);
   --card-gap: clamp(1rem, 0.8vw + 0.7rem, 1.6rem);
   --scroll-progress: 0;
-  --scroll-y: 0px;
 }
 
 * {
@@ -442,7 +441,7 @@ ul {
   border-radius: 36px;
   border: 1px solid var(--line);
   background: var(--paper);
-  box-shadow: 0 22px 58px rgba(91, 71, 48, 0.08);
+  box-shadow: 0 14px 32px rgba(91, 71, 48, 0.06);
 }
 
 .scene-number {
@@ -480,7 +479,6 @@ ul {
   position: relative;
   aspect-ratio: 1.06 / 1;
   border-radius: 30px;
-  transform: translateY(calc(var(--scroll-y) * -0.01));
 }
 
 .scene-screen {
@@ -492,7 +490,7 @@ ul {
   overflow: hidden;
   border: 1px solid rgba(47, 35, 24, 0.09);
   background: var(--paper);
-  box-shadow: var(--shadow);
+  box-shadow: 0 14px 30px rgba(91, 71, 48, 0.08);
 }
 
 .screen-standard {

@@ -47,7 +47,7 @@ const projects = [
     image: "/scene-preview-b.png",
     tags: ["HTML", "CSS", "JavaScript", "Bootstrap", "Responsive design"],
     accent: "sky",
-    presentation: "window",
+    presentation: "art",
     top: "2.3rem"
   },
   {
@@ -58,7 +58,7 @@ const projects = [
     image: "/scene-preview-c.png",
     tags: ["Flask", "Leaflet", "PHIVOLCS", "Vercel + Render", "Wave alerts"],
     accent: "leaf",
-    presentation: "window",
+    presentation: "art",
     top: "3.6rem"
   }
 ];
@@ -126,7 +126,6 @@ export default function PortfolioExperience() {
       const progress = maxScroll > 0 ? window.scrollY / maxScroll : 0;
 
       root.style.setProperty("--scroll-progress", progress.toFixed(4));
-      root.style.setProperty("--scroll-y", `${window.scrollY}px`);
 
       ticking = false;
     };
