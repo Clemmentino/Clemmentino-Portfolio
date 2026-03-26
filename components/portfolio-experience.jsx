@@ -169,7 +169,7 @@ export default function PortfolioExperience() {
             <h1>Built to work. Made to feel clear.</h1>
             <p className="lede">
               I'm Clemmentino, a frontend-focused full-stack developer who cares
-              about websites that feel clear, modern, and actually useful.
+              about websites that feel clear, modern, and actually useful with the help of AI.
               Frontend is where I'm strongest, but I can handle the backend
               connection too, especially for systems that need a real working
               flow.
