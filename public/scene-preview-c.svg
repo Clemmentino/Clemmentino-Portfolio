@@ -1,0 +1,15 @@
+<svg width="1200" height="1200" viewBox="0 0 1200 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1200" fill="#FAF4EB"/>
+  <rect x="76" y="76" width="1048" height="1048" rx="44" fill="#FFFBF3" stroke="#DED0C1"/>
+  <rect x="126" y="126" width="354" height="948" rx="36" fill="#F8E3D4"/>
+  <rect x="530" y="126" width="544" height="248" rx="32" fill="#FFF8EF" stroke="#E1D4C6"/>
+  <rect x="582" y="190" width="188" height="14" rx="7" fill="#8E7767"/>
+  <rect x="582" y="230" width="322" height="14" rx="7" fill="#D8CCBD"/>
+  <rect x="582" y="270" width="248" height="14" rx="7" fill="#D8CCBD"/>
+  <rect x="530" y="432" width="544" height="642" rx="32" fill="#FFF8EF" stroke="#E1D4C6"/>
+  <path d="M596 760C596 683.232 658.232 621 735 621H872C948.768 621 1011 683.232 1011 760V970H596V760Z" fill="#C8DCF5"/>
+  <circle cx="304" cy="352" r="128" fill="#F0A27A"/>
+  <circle cx="246" cy="732" r="94" fill="#D4DECB"/>
+  <text x="140" y="1044" fill="#46372A" font-family="Georgia, serif" font-size="46">Runway scene three</text>
+  <text x="140" y="1092" fill="#7A6C5E" font-family="Arial, sans-serif" font-size="22">A portrait-first direction with stronger mood and lighter rhythm.</text>
+</svg>

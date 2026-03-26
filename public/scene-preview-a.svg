@@ -1,0 +1,16 @@
+<svg width="1200" height="1200" viewBox="0 0 1200 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1200" fill="#FBF5EC"/>
+  <rect x="74" y="74" width="1052" height="1052" rx="44" fill="#FFFBF3" stroke="#DED0C1"/>
+  <rect x="122" y="122" width="956" height="138" rx="28" fill="#F7DFC9"/>
+  <rect x="176" y="180" width="224" height="14" rx="7" fill="#8E7767"/>
+  <rect x="122" y="314" width="486" height="714" rx="34" fill="#F0A27A"/>
+  <rect x="654" y="314" width="424" height="246" rx="32" fill="#FFF8EF" stroke="#E1D4C6"/>
+  <rect x="706" y="374" width="198" height="14" rx="7" fill="#8E7767"/>
+  <rect x="706" y="414" width="284" height="14" rx="7" fill="#D8CCBD"/>
+  <rect x="706" y="454" width="230" height="14" rx="7" fill="#D8CCBD"/>
+  <rect x="654" y="614" width="424" height="414" rx="32" fill="#FFF8EF" stroke="#E1D4C6"/>
+  <path d="M716 848C716 766.814 781.814 701 863 701H871C952.186 701 1018 766.814 1018 848V972H716V848Z" fill="#C8DCF5"/>
+  <circle cx="264" cy="428" r="126" fill="#F9D6C2"/>
+  <text x="138" y="1044" fill="#46372A" font-family="Georgia, serif" font-size="46">Runway scene one</text>
+  <text x="138" y="1092" fill="#7A6C5E" font-family="Arial, sans-serif" font-size="22">A launch-style composition with bigger visual timing.</text>
+</svg>

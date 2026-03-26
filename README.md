@@ -4,9 +4,9 @@ A light, interactive portfolio built with Next.js and designed for Vercel deploy
 
 The current direction is:
 - portrait-led hero
-- designer-forward layout
+- designer-forward runway layout
 - light editorial palette
-- dashboard-inspired project presentation
+- stacked scene-style project sections
 - responsive motion and interaction
 
 ## Tech Stack
@@ -14,7 +14,7 @@ The current direction is:
 - Next.js 16
 - React 19
 - App Router
-- Custom CSS with a light visual system, layered panels, and interactive motion
+- Custom CSS with a light visual system, stacked scene layouts, and interactive motion
 
 ## Local Development
 
@@ -87,6 +87,6 @@ If you want to make the portfolio fully yours, start here:
 
 ## Notes
 
-- The current project cards still use placeholder names and placeholder case studies.
+- The current project sections still use placeholder names and placeholder case studies.
 - The contact email is a placeholder and should be replaced before deployment.
 - The build has already been verified locally with `npm run build`.
