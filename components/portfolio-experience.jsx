@@ -1,76 +1,76 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect } from "react";
 
-const chapters = [
+const notes = [
   {
-    id: "01",
-    title: "Narrative-first interfaces",
+    title: "Light art direction",
     copy:
-      "Every screen should feel like a scene change. I design landing experiences that move with clarity, tension, and release, so visitors understand the work before they read a single caption."
+      "A softer palette and more open spacing make the portfolio feel curated instead of synthetic."
   },
   {
-    id: "02",
-    title: "Motion with intent",
+    title: "Apple in motion",
     copy:
-      "Scroll is treated as choreography, not decoration. Layers drift, content locks into place, and micro-interactions reinforce hierarchy instead of competing for attention."
+      "The influence is in the pacing and transitions, not in copying a dark product-page look."
   },
   {
-    id: "03",
-    title: "Performance as luxury",
+    title: "Soul through composition",
     copy:
-      "The best premium websites feel effortless. I pair immersive visuals with clean frontend architecture, responsive systems, and careful pacing so the experience stays fast on real devices."
+      "Offset frames, real image weight, and quieter sections create a stronger point of view."
   }
 ];
 
 const featuredProjects = [
   {
-    title: "Luma Atelier",
-    type: "Luxury commerce concept",
+    title: "Project One",
+    type: "Immersive brand site",
     summary:
-      "A cinematic storefront where product discovery feels editorial, with layered storytelling, fluid transitions, and a high-conversion purchasing flow.",
-    stats: ["+41% deeper sessions", "4.8s average story path", "Motion-led PDP"],
-    tone: "gold"
+      "A large-scale landing experience built to feel spacious, tactile, and deliberate, with imagery carrying the first impression and motion supporting the hierarchy.",
+    details: ["Editorial layout", "Layered scroll pacing", "High-clarity sections"],
+    image: "/project-frame-1.svg",
+    palette: "sand"
   },
   {
-    title: "Astra Broadcast",
-    type: "Launch campaign system",
+    title: "Project Two",
+    type: "Launch campaign page",
     summary:
-      "A dark-to-light product reveal experience for a next-gen platform launch, designed to scale across landing pages, teasers, and feature spotlights.",
-    stats: ["6 modular scenes", "Multi-device narrative", "Reusable motion system"],
-    tone: "blue"
+      "A cleaner motion-led build where sections pin, release, and reveal with more breathing room, creating a stronger sense of rhythm from top to bottom.",
+    details: ["Pinned transitions", "Image-led storytelling", "Vercel-friendly build"],
+    image: "/project-frame-2.svg",
+    palette: "sky"
   },
   {
-    title: "Drift Protocol",
-    type: "Creative dev portfolio",
+    title: "Project Three",
+    type: "Portfolio direction",
     summary:
-      "A sharply art-directed personal site with immersive transitions, tactile project cards, and a polished contact journey built to turn attention into inquiries.",
-    stats: ["Premium brand feel", "Fast mobile layout", "Case-study storytelling"],
-    tone: "rose"
+      "A more personal portfolio treatment that uses lighter color, stronger image placement, and measured animation so the interface feels human and considered.",
+    details: ["Asymmetric composition", "Gentle hover motion", "Editorial styling"],
+    image: "/project-frame-3.svg",
+    palette: "rose"
   }
-];
-
-const capabilities = [
-  "Scroll choreography",
-  "Creative direction",
-  "Frontend systems",
-  "Responsive motion",
-  "Interaction design",
-  "Performance tuning"
 ];
 
 const principles = [
   {
-    label: "Mood",
-    value: "Apple precision with Awwwards confidence"
+    title: "Images first",
+    copy:
+      "The work should be seen immediately. Large captures do more than badges or filler copy ever will."
   },
   {
-    label: "Build",
-    value: "Next.js on Vercel with deliberate, lightweight motion"
+    title: "Breathing room",
+    copy:
+      "Luxury comes from white space, scale, and what you choose not to crowd into a section."
   },
   {
-    label: "Goal",
-    value: "Beautiful, memorable, easy to understand, and fast"
+    title: "Measured motion",
+    copy:
+      "Animation should guide the eye, not fight for attention."
+  },
+  {
+    title: "Real personality",
+    copy:
+      "A portfolio should feel like a point of view, not a safe template with prettier gradients."
   }
 ];
 
@@ -123,11 +123,10 @@ export default function PortfolioExperience() {
   }, []);
 
   return (
-    <main className="page-shell">
+    <main className="page-shell light-shell">
       <div className="progress-bar" aria-hidden="true" />
 
       <section className="hero section-frame">
-        <div className="hero-noise" aria-hidden="true" />
         <header className="topbar" data-reveal>
           <div className="brand-lockup">
             <span className="brand-dot" />
@@ -135,7 +134,7 @@ export default function PortfolioExperience() {
           </div>
           <nav className="topnav" aria-label="Section navigation">
             <a href="#work">Work</a>
-            <a href="#approach">Approach</a>
+            <a href="#method">Method</a>
             <a href="#contact">Contact</a>
           </nav>
         </header>
@@ -143,175 +142,162 @@ export default function PortfolioExperience() {
         <div className="hero-grid">
           <div className="hero-copy" data-reveal>
             <p className="eyebrow">Creative Frontend Developer / Designer</p>
-            <h1>
-              Building scroll-led digital experiences that feel cinematic,
-              precise, and unmistakably premium.
-            </h1>
+            <h1>Light, image-led websites with movement that actually feels considered.</h1>
             <p className="lede">
-              I design and build portfolios, launches, and interactive brand
-              sites where art direction, motion, and frontend craft move as one
-              system.
+              This direction trades dark template energy for soft contrast,
+              editorial spacing, and motion that carries the eye instead of
+              showing off.
             </p>
             <div className="hero-actions">
               <a href="#work" className="primary-link">
-                Explore selected work
+                View the direction
               </a>
               <a href="#contact" className="secondary-link">
-                Start a project
+                Build with me
               </a>
+            </div>
+
+            <div className="hero-meta">
+              {notes.map((note) => (
+                <article className="meta-card" key={note.title}>
+                  <strong>{note.title}</strong>
+                  <p>{note.copy}</p>
+                </article>
+              ))}
             </div>
           </div>
 
           <div className="hero-stage" data-reveal>
-            <div className="orbital orbital-a" />
-            <div className="orbital orbital-b" />
-            <div className="showcase-card primary-card">
-              <span className="card-label">Featured Direction</span>
-              <strong>Apple-meets-Awwwards</strong>
-              <p>
-                Bold layouts, disciplined motion, and storytelling built around
-                scroll.
-              </p>
+            <figure className="collage-frame collage-wide">
+              <Image
+                src="/editorial-hero-a.svg"
+                alt="Wide editorial composition representing a clean portfolio interface."
+                fill
+                priority
+                sizes="(max-width: 980px) 100vw, 48vw"
+                className="art-image"
+              />
+            </figure>
+            <figure className="collage-frame collage-tall">
+              <Image
+                src="/editorial-hero-b.svg"
+                alt="Tall poster-style composition showing a lighter, art-directed visual system."
+                fill
+                priority
+                sizes="(max-width: 980px) 70vw, 26vw"
+                className="art-image"
+              />
+            </figure>
+            <div className="paper-note">
+              Apple in the pacing. Editorial in the look. Less template, more
+              point of view.
             </div>
-            <div className="showcase-card floating-card">
-              <span className="card-label">Core Promise</span>
-              <strong>Beautiful. Memorable. Fast.</strong>
-            </div>
-            <div className="metrics-panel">
-              <div>
-                <span>Focus</span>
-                <strong>Frontend craft</strong>
-              </div>
-              <div>
-                <span>Style</span>
-                <strong>Editorial motion</strong>
-              </div>
-              <div>
-                <span>Stack</span>
-                <strong>Next.js + Vercel</strong>
-              </div>
-            </div>
+            <div className="paper-stamp">Vercel-ready</div>
           </div>
-        </div>
-
-        <div className="principles-strip" data-reveal>
-          {principles.map((principle) => (
-            <article className="principle-card" key={principle.label}>
-              <span>{principle.label}</span>
-              <p>{principle.value}</p>
-            </article>
-          ))}
         </div>
       </section>
 
-      <section className="story-section section-frame" id="approach">
-        <div className="section-intro" data-reveal>
-          <p className="eyebrow">Approach</p>
-          <h2>Scroll should feel like direction, not a gimmick.</h2>
-          <p className="section-copy">
-            This portfolio is structured like a sequence: establish the mood,
-            hold attention with movement, then let the work land with clarity.
-          </p>
-        </div>
-
-        <div className="story-grid">
-          <div className="story-sticky" data-reveal>
-            <p className="eyebrow">What makes it premium</p>
-            <h3>High-end pacing, clear hierarchy, and just enough spectacle.</h3>
-            <p>
-              The strongest portfolios do not throw every animation onto the
-              page. They build tension, leave room for typography, and give each
-              section a reason to exist.
-            </p>
+      <section className="manifesto section-frame" id="method">
+        <div className="manifesto-grid" data-reveal>
+          <div className="manifesto-heading">
+            <p className="eyebrow">Direction</p>
+            <h2>The site should feel airy, visual, and authored from the first scroll.</h2>
           </div>
 
-          <div className="story-stack">
-            {chapters.map((chapter) => (
-              <article className="story-card" data-reveal key={chapter.id}>
-                <span className="story-index">{chapter.id}</span>
-                <h3>{chapter.title}</h3>
-                <p>{chapter.copy}</p>
+          <div className="manifesto-copy">
+            <p>
+              The stronger move here is not more effects. It is more image
+              weight, more rhythm, and a lighter visual palette that feels more
+              human and more intentional.
+            </p>
+            <p>
+              So the redesign leans into paper tones, layered frames, poster-like
+              composition, and sections that reveal with control instead of
+              noise.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="work-section section-frame" id="work">
+        <div className="work-grid">
+          <aside className="work-sticky" data-reveal>
+            <p className="eyebrow">Selected Work</p>
+            <h2>Large visuals first. Copy second. Motion in support.</h2>
+            <p>
+              These layouts are built to hold real screenshots and project
+              imagery when you are ready to swap them in.
+            </p>
+          </aside>
+
+          <div className="project-stack">
+            {featuredProjects.map((project, index) => (
+              <article
+                className={`project-card palette-${project.palette} ${
+                  index % 2 === 1 ? "project-reverse" : ""
+                }`}
+                data-reveal
+                key={project.title}
+              >
+                <div className="project-visual">
+                  <div className="image-frame">
+                    <Image
+                      src={project.image}
+                      alt={`${project.title} editorial project frame`}
+                      fill
+                      sizes="(max-width: 980px) 100vw, 42vw"
+                      className="art-image"
+                    />
+                  </div>
+                </div>
+
+                <div className="project-copy">
+                  <p className="project-meta">
+                    {String(index + 1).padStart(2, "0")} / {project.type}
+                  </p>
+                  <h3>{project.title}</h3>
+                  <p>{project.summary}</p>
+                  <ul className="project-stats" aria-label={`${project.title} details`}>
+                    {project.details.map((detail) => (
+                      <li key={detail}>{detail}</li>
+                    ))}
+                  </ul>
+                </div>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="work-section section-frame" id="work">
+      <section className="principles-section section-frame">
         <div className="section-intro" data-reveal>
-          <p className="eyebrow">Selected Work</p>
-          <h2>Case studies framed like scenes instead of thumbnails.</h2>
+          <p className="eyebrow">Method</p>
+          <h2>Luxury comes from restraint, composition, and what you choose to show.</h2>
         </div>
 
-        <div className="project-stack">
-          {featuredProjects.map((project, index) => (
-            <article
-              className={`project-card tone-${project.tone}`}
-              data-reveal
-              key={project.title}
-            >
-              <div className="project-copy">
-                <p className="project-meta">
-                  {String(index + 1).padStart(2, "0")} / {project.type}
-                </p>
-                <h3>{project.title}</h3>
-                <p>{project.summary}</p>
-                <ul className="project-stats" aria-label={`${project.title} outcomes`}>
-                  {project.stats.map((stat) => (
-                    <li key={stat}>{stat}</li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="project-visual" aria-hidden="true">
-                <div className="browser-shell">
-                  <div className="browser-chrome">
-                    <span />
-                    <span />
-                    <span />
-                  </div>
-                  <div className="browser-content">
-                    <div className="browser-hero" />
-                    <div className="browser-columns">
-                      <div />
-                      <div />
-                    </div>
-                  </div>
-                </div>
-                <div className="floating-swatch" />
-                <div className="floating-pill" />
-              </div>
+        <div className="principles-grid">
+          {principles.map((principle) => (
+            <article className="principle-card" data-reveal key={principle.title}>
+              <h3>{principle.title}</h3>
+              <p>{principle.copy}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="capabilities-section section-frame">
-        <div className="section-intro" data-reveal>
-          <p className="eyebrow">Capabilities</p>
-          <h2>Designed to impress visually and hold up technically.</h2>
-        </div>
-
-        <div className="capabilities-grid" data-reveal>
-          {capabilities.map((capability) => (
-            <div className="capability-chip" key={capability}>
-              {capability}
-            </div>
-          ))}
-        </div>
-
-        <div className="closing-panel" data-reveal id="contact">
-          <div>
-            <p className="eyebrow">Ready to build?</p>
-            <h2>Let's make your portfolio feel like a launch, not a template.</h2>
+      <section className="closing-section section-frame" id="contact">
+        <div className="closing-panel" data-reveal>
+          <div className="closing-copy">
+            <p className="eyebrow">Next</p>
+            <h2>Now it needs your real project shots to make the portfolio unmistakably yours.</h2>
           </div>
           <div className="closing-actions">
             <a href="mailto:hello@clemmentino.dev" className="primary-link">
               hello@clemmentino.dev
             </a>
             <p>
-              Built for Vercel, tuned for motion, and shaped to feel expensive
-              without sacrificing speed.
+              The structure is ready for real screenshots, photography, and live
+              case-study content whenever you want to slot them in.
             </p>
           </div>
         </div>

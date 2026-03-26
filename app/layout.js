@@ -1,8 +1,8 @@
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { Cormorant_Garamond, Sora } from "next/font/google";
 
 import "./globals.css";
 
-const manrope = Manrope({
+const sora = Sora({
   subsets: ["latin"],
   variable: "--font-sans"
 });
@@ -14,14 +14,14 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata = {
-  title: "Clemmentino | Creative Frontend Portfolio",
+  title: "Clemmentino | Light Motion Portfolio",
   description:
-    "An Apple-meets-Awwwards portfolio for a creative frontend developer building cinematic, high-performance digital experiences."
+    "A light, editorial portfolio for a creative frontend developer focused on refined motion, image-led storytelling, and Vercel-ready performance."
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${manrope.variable} ${cormorant.variable}`}>
+    <html lang="en" className={`${sora.variable} ${cormorant.variable}`}>
       <body>{children}</body>
     </html>
   );

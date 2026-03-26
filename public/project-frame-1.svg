@@ -1,0 +1,15 @@
+<svg width="1200" height="1200" viewBox="0 0 1200 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1200" fill="#F6EFE5"/>
+  <rect x="74" y="70" width="1052" height="1060" rx="42" fill="#FFFDF8" stroke="#D9CCBC"/>
+  <rect x="116" y="116" width="968" height="120" rx="28" fill="#F4E2CF"/>
+  <rect x="168" y="168" width="220" height="16" rx="8" fill="#8A7767"/>
+  <rect x="116" y="288" width="472" height="680" rx="34" fill="#EEC9AE"/>
+  <rect x="632" y="288" width="452" height="316" rx="34" fill="#FFF8EF" stroke="#DED2C4"/>
+  <rect x="678" y="346" width="182" height="14" rx="7" fill="#8A7767"/>
+  <rect x="678" y="388" width="298" height="14" rx="7" fill="#D4C7B7"/>
+  <rect x="678" y="424" width="248" height="14" rx="7" fill="#D4C7B7"/>
+  <path d="M674 770C674 691.576 737.576 628 816 628H944C1022.42 628 1086 691.576 1086 770V968H674V770Z" fill="#BFD4EA"/>
+  <rect x="632" y="654" width="452" height="120" rx="28" fill="#F7F2E9"/>
+  <text x="132" y="1040" fill="#4A3A2A" font-family="Georgia, serif" font-size="46">Project frame one</text>
+  <text x="133" y="1088" fill="#7B6C5D" font-family="Arial, sans-serif" font-size="22">Image-led homepage layout with warm contrast and softer rhythm.</text>
+</svg>

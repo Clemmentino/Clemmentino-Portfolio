@@ -1,0 +1,17 @@
+<svg width="900" height="1200" viewBox="0 0 900 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1200" fill="#F7F0E3"/>
+  <rect x="58" y="58" width="784" height="1084" rx="42" fill="#FFFDF8" stroke="#D9CCBC"/>
+  <path d="M170 275C170 183.321 244.321 109 336 109H566C657.679 109 732 183.321 732 275V354H170V275Z" fill="#C5D8E9"/>
+  <rect x="128" y="410" width="644" height="250" rx="28" fill="#F5E3D0"/>
+  <rect x="162" y="453" width="160" height="12" rx="6" fill="#8C7B6B"/>
+  <rect x="162" y="493" width="262" height="12" rx="6" fill="#C8B9A8"/>
+  <rect x="162" y="525" width="220" height="12" rx="6" fill="#D8CCBE"/>
+  <circle cx="617" cy="536" r="86" fill="#EAC8BE"/>
+  <rect x="128" y="720" width="302" height="300" rx="24" fill="#FFF8EE" stroke="#DDD0C2"/>
+  <rect x="470" y="720" width="302" height="300" rx="24" fill="#FFF8EE" stroke="#DDD0C2"/>
+  <path d="M170 862C170 801.801 218.801 753 279 753H279C339.199 753 388 801.801 388 862V985H170V862Z" fill="#D8BC74"/>
+  <path d="M512 838C512 793.817 547.817 758 592 758H650C694.183 758 730 793.817 730 838V985H512V838Z" fill="#C8D7C6"/>
+  <text x="128" y="184" fill="#4A3A2A" font-family="Georgia, serif" font-size="40">Poster frame</text>
+  <text x="128" y="228" fill="#7B6C5D" font-family="Arial, sans-serif" font-size="20">For a more visual, less templated portfolio.</text>
+  <text x="128" y="1088" fill="#8C7B6B" font-family="Arial, sans-serif" font-size="18" letter-spacing="4">PACE / IMAGE / COMPOSITION</text>
+</svg>
