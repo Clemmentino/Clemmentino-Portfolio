@@ -16,7 +16,12 @@ const fraunces = Fraunces({
 export const metadata = {
   title: "Clemmentino Portfolio | Frontend-Focused Full-Stack Developer",
   description:
-    "A light, portrait-led portfolio for a frontend-focused full-stack developer interested in websites, frontend systems, and public-interest technology."
+    "A light, portrait-led portfolio for a frontend-focused full-stack developer interested in websites, frontend systems, and public-interest technology.",
+  icons: {
+    icon: "/svglogo.png",
+    shortcut: "/svglogo.png",
+    apple: "/svglogo.png"
+  }
 };
 
 export default function RootLayout({ children }) {
