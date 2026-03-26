@@ -1,15 +1,73 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
+const THEME_STORAGE_KEY = "clemmentino-theme-preference";
+
+const themeOptions = [
+  { value: "auto", label: "Auto", swatch: "auto" },
+  { value: "light", label: "White", swatch: "light" },
+  { value: "dawn", label: "Grey", swatch: "dawn" },
+  { value: "dark", label: "Dark", swatch: "dark" }
+];
+
+const resolvedThemeLabels = {
+  light: "White",
+  dawn: "Grey",
+  dark: "Dark"
+};
+
+function getAutoTheme(date = new Date()) {
+  const hour = date.getHours();
+
+  if (hour >= 17 || hour < 5) {
+    return "dark";
+  }
+
+  if (hour < 6) {
+    return "dawn";
+  }
+
+  return "light";
+}
+
+function applyTheme(preference) {
+  const resolvedTheme = preference === "auto" ? getAutoTheme() : preference;
+
+  if (typeof document !== "undefined") {
+    const root = document.documentElement;
+
+    root.dataset.themePreference = preference;
+    root.dataset.theme = resolvedTheme;
+  }
+
+  return resolvedTheme;
+}
+
+function getStoredThemePreference() {
+  try {
+    return window.localStorage.getItem(THEME_STORAGE_KEY);
+  } catch {
+    return null;
+  }
+}
+
+function storeThemePreference(preference) {
+  try {
+    window.localStorage.setItem(THEME_STORAGE_KEY, preference);
+  } catch {
+    // Ignore storage failures and keep the in-memory selection for this session.
+  }
+}
 
 const tickerItems = [
-  "PHP",
-  "UI design",
-  "Photography",
-  "Videography",
-  "Frontend systems",
-  "Government tech interest"
+  "PHP ",
+  "UI design ",
+  "Photography ",
+  "Videography ",
+  "Frontend systems ",
+  "Government tech interest "
 ];
 
 const metrics = [
@@ -100,6 +158,49 @@ const capabilityNotes = [
 ];
 
 export default function PortfolioExperience() {
+  const [themePreference, setThemePreference] = useState("auto");
+  const [resolvedTheme, setResolvedTheme] = useState("light");
+
+  useEffect(() => {
+    const root = document.documentElement;
+    const initialPreference =
+      root.dataset.themePreference ||
+      getStoredThemePreference() ||
+      "auto";
+    const initialTheme = applyTheme(initialPreference);
+
+    setThemePreference(initialPreference);
+    setResolvedTheme(initialTheme);
+
+    const syncAutoTheme = () => {
+      const storedPreference = getStoredThemePreference() || "auto";
+
+      if (storedPreference !== "auto") {
+        return;
+      }
+
+      setThemePreference("auto");
+      setResolvedTheme(applyTheme("auto"));
+    };
+
+    const onVisibilityChange = () => {
+      if (!document.hidden) {
+        syncAutoTheme();
+      }
+    };
+
+    const intervalId = window.setInterval(syncAutoTheme, 60_000);
+
+    window.addEventListener("focus", syncAutoTheme);
+    document.addEventListener("visibilitychange", onVisibilityChange);
+
+    return () => {
+      window.clearInterval(intervalId);
+      window.removeEventListener("focus", syncAutoTheme);
+      document.removeEventListener("visibilitychange", onVisibilityChange);
+    };
+  }, []);
+
   useEffect(() => {
     const root = document.documentElement;
     const revealElements = document.querySelectorAll("[data-reveal]");
@@ -146,6 +247,12 @@ export default function PortfolioExperience() {
     };
   }, []);
 
+  const handleThemeChange = (nextPreference) => {
+    storeThemePreference(nextPreference);
+    setThemePreference(nextPreference);
+    setResolvedTheme(applyTheme(nextPreference));
+  };
+
   return (
     <main className="page-shell">
       <div className="progress-bar" aria-hidden="true" />
@@ -156,11 +263,39 @@ export default function PortfolioExperience() {
             <span className="brand-dot" />
             <span className="brand-name">Clemmentino Portfolio</span>
           </div>
-          <nav className="topnav" aria-label="Section navigation">
-            <a href="#work">Work</a>
-            <a href="#process">Process</a>
-            <a href="#contact">Contact</a>
-          </nav>
+          <div className="topbar-actions">
+            <nav className="topnav" aria-label="Section navigation">
+              <a href="#work">Work</a>
+              <a href="#process">Process</a>
+              <a href="#contact">Contact</a>
+            </nav>
+            <div className="theme-control">
+              <p className="theme-caption">
+                {themePreference === "auto"
+                  ? `Auto now: ${resolvedThemeLabels[resolvedTheme]}`
+                  : `Manual: ${resolvedThemeLabels[resolvedTheme]}`}
+              </p>
+              <div className="theme-toggle" role="group" aria-label="Theme switcher">
+                {themeOptions.map((option) => (
+                  <button
+                    type="button"
+                    key={option.value}
+                    className={`theme-option ${
+                      themePreference === option.value ? "is-active" : ""
+                    }`}
+                    onClick={() => handleThemeChange(option.value)}
+                    aria-pressed={themePreference === option.value}
+                  >
+                    <span
+                      className={`theme-swatch theme-swatch-${option.swatch}`}
+                      aria-hidden="true"
+                    />
+                    <span>{option.label}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
         </header>
 
         <div className="hero-panel">
@@ -213,7 +348,7 @@ export default function PortfolioExperience() {
               />
             </figure>
             <div className="name-ribbon">Clemmentino / frontend-focused full-stack developer</div>
-            <div className="note-badge">creative but minimal, with real build depth</div>
+            <div className="note-badge">miss na miss kona yung baby ko</div>
           </div>
         </div>
       </section>
