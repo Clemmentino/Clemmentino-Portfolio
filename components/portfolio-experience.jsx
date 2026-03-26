@@ -36,6 +36,7 @@ const projects = [
     image: "/scene-preview-a.png",
     tags: ["Laravel 12", "Vue 3", "Chart.js", "FullCalendar", "Queue workers"],
     accent: "sun",
+    frame: "laptop",
     top: "1rem"
   },
   {
@@ -46,6 +47,7 @@ const projects = [
     image: "/scene-preview-b.svg",
     tags: ["HTML", "CSS", "JavaScript", "Bootstrap", "Responsive design"],
     accent: "sky",
+    frame: "default",
     top: "2.3rem"
   },
   {
@@ -56,6 +58,7 @@ const projects = [
     image: "/scene-preview-c.svg",
     tags: ["Flask", "Leaflet", "PHIVOLCS", "Vercel + Render", "Wave alerts"],
     accent: "leaf",
+    frame: "default",
     top: "3.6rem"
   }
 ];
@@ -255,14 +258,16 @@ export default function PortfolioExperience() {
                 </div>
 
                 <div className="scene-visual">
-                  <div className="scene-window">
-                    <Image
-                      src={project.image}
-                      alt={`${project.title} preview`}
-                      fill
-                      sizes="(max-width: 980px) 100vw, 44vw"
-                      className="preview-image"
-                    />
+                  <div className={`scene-window ${project.frame === "laptop" ? "frame-laptop" : ""}`}>
+                    <div className="scene-screen">
+                      <Image
+                        src={project.image}
+                        alt={`${project.title} preview`}
+                        fill
+                        sizes="(max-width: 980px) 100vw, 44vw"
+                        className="preview-image"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
