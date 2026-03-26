@@ -45,29 +45,47 @@ const fraunces = Fraunces({
   variable: "--font-display"
 });
 
-const metadataBase =
-  process.env.NEXT_PUBLIC_SITE_URL
-    ? new URL(process.env.NEXT_PUBLIC_SITE_URL)
-    : process.env.VERCEL_URL
-      ? new URL(`https://${process.env.VERCEL_URL}`)
-      : new URL("http://localhost:3000");
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "https://clemmentino-portfolio.vercel.app");
+
+const metadataBase = new URL(siteUrl);
+
+const socialImage = new URL("/opengraph-image", metadataBase).toString();
+const twitterImage = new URL("/twitter-image", metadataBase).toString();
 
 export const metadata = {
   metadataBase,
   title: "Clemmentino Portfolio | Frontend-Focused Full-Stack Developer",
   description:
     "A light, portrait-led portfolio for a frontend-focused full-stack developer interested in websites, frontend systems, and public-interest technology.",
+  alternates: {
+    canonical: "/"
+  },
   openGraph: {
     title: "Clemmentino Portfolio",
     description:
       "Frontend-focused full-stack developer building websites, interfaces, and public-interest systems with a clear visual eye.",
-    type: "website"
+    url: "/",
+    siteName: "Clemmentino Portfolio",
+    type: "website",
+    images: [
+      {
+        url: socialImage,
+        width: 1200,
+        height: 630,
+        alt: "Clemmentino Portfolio social cover"
+      }
+    ]
   },
   twitter: {
     card: "summary_large_image",
     title: "Clemmentino Portfolio",
     description:
-      "Frontend-focused full-stack developer building websites, interfaces, and public-interest systems with a clear visual eye."
+      "Frontend-focused full-stack developer building websites, interfaces, and public-interest systems with a clear visual eye.",
+    images: [twitterImage]
   },
   icons: {
     icon: "/svglogo.png",
