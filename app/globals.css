@@ -69,8 +69,8 @@ html[data-theme="light"] {
 
 html[data-theme="dawn"] {
   color-scheme: light;
-  --bg: #ece9e3;
-  --paper: #f5f1ea;
+  --bg: #e0e0e0;
+  --paper: #d6d4cf;
   --paper-soft: rgba(245, 241, 234, 0.86);
   --paper-veil: rgba(245, 241, 234, 0.93);
   --panel-soft: rgba(245, 241, 234, 0.83);
