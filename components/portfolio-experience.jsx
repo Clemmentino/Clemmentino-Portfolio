@@ -1,80 +1,102 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
-const notes = [
+const heroSignals = [
   {
-    title: "Light art direction",
-    copy:
-      "A softer palette and more open spacing make the portfolio feel curated instead of synthetic."
+    label: "Frontend first",
+    value: "Motion-aware interfaces with stronger visual rhythm"
   },
   {
-    title: "Apple in motion",
-    copy:
-      "The influence is in the pacing and transitions, not in copying a dark product-page look."
+    label: "Full-stack capable",
+    value: "I can carry backend logic when the project needs it"
   },
   {
-    title: "Soul through composition",
-    copy:
-      "Offset frames, real image weight, and quieter sections create a stronger point of view."
+    label: "Designer energy",
+    value: "Layout, hierarchy, and interaction all matter equally"
   }
 ];
 
-const featuredProjects = [
+const directionCards = [
   {
-    title: "Project One",
-    type: "Immersive brand site",
-    summary:
-      "A large-scale landing experience built to feel spacious, tactile, and deliberate, with imagery carrying the first impression and motion supporting the hierarchy.",
-    details: ["Editorial layout", "Layered scroll pacing", "High-clarity sections"],
-    image: "/project-frame-1.svg",
-    palette: "sand"
+    title: "Portrait-led hero",
+    copy:
+      "The homepage opens with your face and point of view first, so the site feels personal before it feels technical."
   },
   {
-    title: "Project Two",
-    type: "Launch campaign page",
-    summary:
-      "A cleaner motion-led build where sections pin, release, and reveal with more breathing room, creating a stronger sense of rhythm from top to bottom.",
-    details: ["Pinned transitions", "Image-led storytelling", "Vercel-friendly build"],
-    image: "/project-frame-2.svg",
-    palette: "sky"
+    title: "Interactive board feel",
+    copy:
+      "Panels overlap, cards shift with scroll, and the composition feels closer to a designed interface than a stacked template."
   },
   {
-    title: "Project Three",
-    type: "Portfolio direction",
-    summary:
-      "A more personal portfolio treatment that uses lighter color, stronger image placement, and measured animation so the interface feels human and considered.",
-    details: ["Asymmetric composition", "Gentle hover motion", "Editorial styling"],
-    image: "/project-frame-3.svg",
-    palette: "rose"
+    title: "Light by default",
+    copy:
+      "Creams, warm neutrals, pale blue, and restrained shadows replace the dark luxury look entirely."
+  },
+  {
+    title: "Balanced identity",
+    copy:
+      "The copy positions you as a frontend-focused full-stack developer, but the visual language still leans designer-forward."
   }
 ];
 
-const principles = [
+const projects = [
   {
-    title: "Images first",
-    copy:
-      "The work should be seen immediately. Large captures do more than badges or filler copy ever will."
+    title: "Orbit Landing",
+    category: "Interactive brand experience",
+    summary:
+      "A homepage direction built around layered panels, guided motion, and a cleaner narrative flow from hero to CTA.",
+    image: "/work-preview-a.svg",
+    tags: ["Dashboard-inspired", "Scroll-led", "Light palette"],
+    accent: "peach"
   },
   {
-    title: "Breathing room",
-    copy:
-      "Luxury comes from white space, scale, and what you choose not to crowd into a section."
+    title: "Northstar Board",
+    category: "Product showcase system",
+    summary:
+      "A more structured interface concept that uses cards, modules, and visual anchors to make the site feel intelligent and easy to explore.",
+    image: "/work-preview-b.svg",
+    tags: ["Structured layout", "Clear hierarchy", "Interactive modules"],
+    accent: "blue"
   },
   {
-    title: "Measured motion",
+    title: "Canvas Profile",
+    category: "Designer-forward portfolio",
+    summary:
+      "A softer portfolio treatment with a stronger portrait presence, editorial spacing, and motion that supports rather than overperforms.",
+    image: "/work-preview-c.svg",
+    tags: ["Portrait-led", "Editorial spacing", "Soft motion"],
+    accent: "sage"
+  }
+];
+
+const capabilities = [
+  {
+    title: "Frontend craft",
     copy:
-      "Animation should guide the eye, not fight for attention."
+      "Refined layouts, motion pacing, responsive polish, and interface details that make the site feel cared for."
   },
   {
-    title: "Real personality",
+    title: "Backend support",
     copy:
-      "A portfolio should feel like a point of view, not a safe template with prettier gradients."
+      "When the build needs logic, forms, or data handling, I can carry the work past the visual layer."
+  },
+  {
+    title: "Motion thinking",
+    copy:
+      "Transitions should guide the eye, create emphasis, and add character without slowing the experience down."
+  },
+  {
+    title: "Visual instinct",
+    copy:
+      "Typography, spacing, image placement, and color need to work as a system, not as separate decisions."
   }
 ];
 
 export default function PortfolioExperience() {
+  const heroRef = useRef(null);
+
   useEffect(() => {
     const root = document.documentElement;
     const revealElements = document.querySelectorAll("[data-reveal]");
@@ -87,7 +109,7 @@ export default function PortfolioExperience() {
         });
       },
       {
-        threshold: 0.2,
+        threshold: 0.16,
         rootMargin: "0px 0px -10% 0px"
       }
     );
@@ -113,20 +135,46 @@ export default function PortfolioExperience() {
       }
     };
 
+    const heroElement = heroRef.current;
+
+    const onPointerMove = (event) => {
+      if (!heroElement) {
+        return;
+      }
+
+      const rect = heroElement.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width;
+      const y = (event.clientY - rect.top) / rect.height;
+
+      root.style.setProperty("--pointer-x", x.toFixed(3));
+      root.style.setProperty("--pointer-y", y.toFixed(3));
+    };
+
+    const resetPointer = () => {
+      root.style.setProperty("--pointer-x", "0.5");
+      root.style.setProperty("--pointer-y", "0.5");
+    };
+
     updateScrollVars();
+    resetPointer();
+
     window.addEventListener("scroll", onScroll, { passive: true });
+    heroElement?.addEventListener("pointermove", onPointerMove);
+    heroElement?.addEventListener("pointerleave", resetPointer);
 
     return () => {
       observer.disconnect();
       window.removeEventListener("scroll", onScroll);
+      heroElement?.removeEventListener("pointermove", onPointerMove);
+      heroElement?.removeEventListener("pointerleave", resetPointer);
     };
   }, []);
 
   return (
-    <main className="page-shell light-shell">
+    <main className="page-shell">
       <div className="progress-bar" aria-hidden="true" />
 
-      <section className="hero section-frame">
+      <section className="hero section-frame" ref={heroRef}>
         <header className="topbar" data-reveal>
           <div className="brand-lockup">
             <span className="brand-dot" />
@@ -134,132 +182,142 @@ export default function PortfolioExperience() {
           </div>
           <nav className="topnav" aria-label="Section navigation">
             <a href="#work">Work</a>
-            <a href="#method">Method</a>
+            <a href="#about">Approach</a>
             <a href="#contact">Contact</a>
           </nav>
         </header>
 
-        <div className="hero-grid">
+        <div className="hero-layout">
           <div className="hero-copy" data-reveal>
-            <p className="eyebrow">Creative Frontend Developer / Designer</p>
-            <h1>Light, image-led websites with movement that actually feels considered.</h1>
+            <p className="eyebrow">Frontend-focused full-stack developer</p>
+            <h1>Interactive websites with a designer&apos;s eye and a developer&apos;s backbone.</h1>
             <p className="lede">
-              This direction trades dark template energy for soft contrast,
-              editorial spacing, and motion that carries the eye instead of
-              showing off.
+              I care most about the frontend, but I can carry backend work too.
+              The goal is a site that feels visually alive, easy to navigate,
+              and clearly made by someone with taste.
             </p>
             <div className="hero-actions">
               <a href="#work" className="primary-link">
-                View the direction
+                See selected work
               </a>
               <a href="#contact" className="secondary-link">
-                Build with me
+                Let&apos;s build something
               </a>
             </div>
 
-            <div className="hero-meta">
-              {notes.map((note) => (
-                <article className="meta-card" key={note.title}>
-                  <strong>{note.title}</strong>
-                  <p>{note.copy}</p>
+            <div className="signal-grid">
+              {heroSignals.map((signal) => (
+                <article className="signal-card" key={signal.label}>
+                  <span>{signal.label}</span>
+                  <p>{signal.value}</p>
                 </article>
               ))}
             </div>
           </div>
 
           <div className="hero-stage" data-reveal>
-            <figure className="collage-frame collage-wide">
-              <Image
-                src="/editorial-hero-a.svg"
-                alt="Wide editorial composition representing a clean portfolio interface."
-                fill
-                priority
-                sizes="(max-width: 980px) 100vw, 48vw"
-                className="art-image"
-              />
+            <div className="hero-gridlines" aria-hidden="true" />
+
+            <figure className="portrait-shell">
+              <div className="portrait-frame">
+                <Image
+                  src="/me.jpg"
+                  alt="Portrait of Clemmentino"
+                  fill
+                  priority
+                  sizes="(max-width: 980px) 100vw, 38vw"
+                  className="portrait-image"
+                />
+              </div>
             </figure>
-            <figure className="collage-frame collage-tall">
-              <Image
-                src="/editorial-hero-b.svg"
-                alt="Tall poster-style composition showing a lighter, art-directed visual system."
-                fill
-                priority
-                sizes="(max-width: 980px) 70vw, 26vw"
-                className="art-image"
-              />
-            </figure>
-            <div className="paper-note">
-              Apple in the pacing. Editorial in the look. Less template, more
-              point of view.
+
+            <article className="floating-card card-primary">
+              <span className="floating-label">Current direction</span>
+              <strong>Light, layered, interactive</strong>
+              <p>Less template. More composition, motion, and personality.</p>
+            </article>
+
+            <article className="floating-card card-secondary">
+              <span className="floating-label">Strength</span>
+              <strong>Frontend-first</strong>
+              <p>Visual systems, motion, and a clean build underneath.</p>
+            </article>
+
+            <article className="floating-card card-tertiary">
+              <span className="floating-label">Balance</span>
+              <strong>Designer + developer</strong>
+            </article>
+
+            <div className="stage-strip">
+              <span>UI systems</span>
+              <span>Motion</span>
+              <span>Clean structure</span>
             </div>
-            <div className="paper-stamp">Vercel-ready</div>
           </div>
         </div>
       </section>
 
-      <section className="manifesto section-frame" id="method">
-        <div className="manifesto-grid" data-reveal>
-          <div className="manifesto-heading">
-            <p className="eyebrow">Direction</p>
-            <h2>The site should feel airy, visual, and authored from the first scroll.</h2>
-          </div>
+      <section className="direction section-frame" id="about">
+        <div className="section-intro" data-reveal>
+          <p className="eyebrow">Approach</p>
+          <h2>A portfolio that feels closer to a designed interface than a plain landing page.</h2>
+        </div>
 
-          <div className="manifesto-copy">
-            <p>
-              The stronger move here is not more effects. It is more image
-              weight, more rhythm, and a lighter visual palette that feels more
-              human and more intentional.
-            </p>
-            <p>
-              So the redesign leans into paper tones, layered frames, poster-like
-              composition, and sections that reveal with control instead of
-              noise.
-            </p>
-          </div>
+        <div className="direction-grid">
+          {directionCards.map((card, index) => (
+            <article
+              className={`direction-card direction-card-${index + 1}`}
+              data-reveal
+              key={card.title}
+            >
+              <h3>{card.title}</h3>
+              <p>{card.copy}</p>
+            </article>
+          ))}
         </div>
       </section>
 
       <section className="work-section section-frame" id="work">
-        <div className="work-grid">
-          <aside className="work-sticky" data-reveal>
+        <div className="work-layout">
+          <aside className="work-intro" data-reveal>
             <p className="eyebrow">Selected Work</p>
-            <h2>Large visuals first. Copy second. Motion in support.</h2>
+            <h2>Dashboard-inspired layouts, softer surfaces, and motion with control.</h2>
             <p>
-              These layouts are built to hold real screenshots and project
-              imagery when you are ready to swap them in.
+              These are placeholder project blocks for now, but the structure is
+              ready for your real screenshots, product shots, or mockups.
             </p>
           </aside>
 
-          <div className="project-stack">
-            {featuredProjects.map((project, index) => (
+          <div className="work-stack">
+            {projects.map((project, index) => (
               <article
-                className={`project-card palette-${project.palette} ${
-                  index % 2 === 1 ? "project-reverse" : ""
+                className={`work-card accent-${project.accent} ${
+                  index % 2 === 1 ? "work-card-reverse" : ""
                 }`}
                 data-reveal
                 key={project.title}
               >
-                <div className="project-visual">
-                  <div className="image-frame">
+                <div className="work-visual">
+                  <div className="work-preview">
                     <Image
                       src={project.image}
-                      alt={`${project.title} editorial project frame`}
+                      alt={`${project.title} preview`}
                       fill
                       sizes="(max-width: 980px) 100vw, 42vw"
-                      className="art-image"
+                      className="preview-image"
                     />
                   </div>
                 </div>
 
-                <div className="project-copy">
+                <div className="work-copy">
                   <p className="project-meta">
-                    {String(index + 1).padStart(2, "0")} / {project.type}
+                    {String(index + 1).padStart(2, "0")} / {project.category}
                   </p>
                   <h3>{project.title}</h3>
                   <p>{project.summary}</p>
-                  <ul className="project-stats" aria-label={`${project.title} details`}>
-                    {project.details.map((detail) => (
-                      <li key={detail}>{detail}</li>
+                  <ul className="tag-list" aria-label={`${project.title} tags`}>
+                    {project.tags.map((tag) => (
+                      <li key={tag}>{tag}</li>
                     ))}
                   </ul>
                 </div>
@@ -269,36 +327,48 @@ export default function PortfolioExperience() {
         </div>
       </section>
 
-      <section className="principles-section section-frame">
+      <section className="capabilities-section section-frame">
         <div className="section-intro" data-reveal>
-          <p className="eyebrow">Method</p>
-          <h2>Luxury comes from restraint, composition, and what you choose to show.</h2>
+          <p className="eyebrow">Capabilities</p>
+          <h2>Not just pretty surfaces. The build needs to hold up too.</h2>
         </div>
 
-        <div className="principles-grid">
-          {principles.map((principle) => (
-            <article className="principle-card" data-reveal key={principle.title}>
-              <h3>{principle.title}</h3>
-              <p>{principle.copy}</p>
+        <div className="capability-grid">
+          {capabilities.map((capability) => (
+            <article className="capability-card" data-reveal key={capability.title}>
+              <h3>{capability.title}</h3>
+              <p>{capability.copy}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="closing-section section-frame" id="contact">
-        <div className="closing-panel" data-reveal>
-          <div className="closing-copy">
-            <p className="eyebrow">Next</p>
-            <h2>Now it needs your real project shots to make the portfolio unmistakably yours.</h2>
+      <section className="contact-section section-frame" id="contact">
+        <div className="contact-panel" data-reveal>
+          <div className="contact-avatar">
+            <Image
+              src="/me.jpg"
+              alt="Portrait thumbnail of Clemmentino"
+              fill
+              sizes="120px"
+              className="portrait-image"
+            />
           </div>
-          <div className="closing-actions">
+
+          <div className="contact-copy">
+            <p className="eyebrow">Contact</p>
+            <h2>Ready to turn this into a portfolio that actually feels like you?</h2>
+            <p>
+              The next real step is swapping the placeholder project blocks with
+              your own screenshots, names, and story.
+            </p>
+          </div>
+
+          <div className="contact-actions">
             <a href="mailto:hello@clemmentino.dev" className="primary-link">
               hello@clemmentino.dev
             </a>
-            <p>
-              The structure is ready for real screenshots, photography, and live
-              case-study content whenever you want to slot them in.
-            </p>
+            <p>Current build: light, portrait-led, and designed to feel interactive.</p>
           </div>
         </div>
       </section>

@@ -1,0 +1,16 @@
+<svg width="1200" height="1200" viewBox="0 0 1200 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1200" fill="#FAF5EE"/>
+  <rect x="72" y="72" width="1056" height="1056" rx="42" fill="#FFFBF4" stroke="#DDD0C1"/>
+  <rect x="118" y="118" width="964" height="120" rx="28" fill="#F5E0D2"/>
+  <rect x="170" y="170" width="208" height="14" rx="7" fill="#8D7768"/>
+  <rect x="118" y="286" width="516" height="672" rx="34" fill="#F0A37F"/>
+  <rect x="676" y="286" width="406" height="194" rx="28" fill="#FFF7EE" stroke="#E1D5C7"/>
+  <rect x="724" y="342" width="180" height="14" rx="7" fill="#8D7768"/>
+  <rect x="724" y="380" width="252" height="14" rx="7" fill="#D9CBBC"/>
+  <rect x="724" y="418" width="204" height="14" rx="7" fill="#D9CBBC"/>
+  <rect x="676" y="528" width="406" height="430" rx="28" fill="#FFF7EE" stroke="#E1D5C7"/>
+  <path d="M734 770C734 692.68 796.68 630 874 630H884C961.32 630 1024 692.68 1024 770V894H734V770Z" fill="#C3D9F4"/>
+  <circle cx="266" cy="428" r="122" fill="#F8D8C7"/>
+  <text x="132" y="1036" fill="#453629" font-family="Georgia, serif" font-size="46">Interactive landing board</text>
+  <text x="132" y="1084" fill="#7A6C5E" font-family="Arial, sans-serif" font-size="22">Warm cards, soft contrast, and modules that feel active.</text>
+</svg>
