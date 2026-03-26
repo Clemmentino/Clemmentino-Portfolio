@@ -53,8 +53,7 @@ const siteUrl =
 
 const metadataBase = new URL(siteUrl);
 
-const socialImage = new URL("/opengraph-image", metadataBase).toString();
-const twitterImage = new URL("/twitter-image", metadataBase).toString();
+const socialImage = new URL("/social-cover.png", metadataBase).toString();
 
 export const metadata = {
   metadataBase,
@@ -85,7 +84,7 @@ export const metadata = {
     title: "Clemmentino Portfolio",
     description:
       "Frontend-focused full-stack developer building websites, interfaces, and public-interest systems with a clear visual eye.",
-    images: [twitterImage]
+    images: [socialImage]
   },
   icons: {
     icon: "/svglogo.png",
