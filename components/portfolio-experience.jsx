@@ -36,7 +36,7 @@ const projects = [
     image: "/scene-preview-a.png",
     tags: ["Laravel 12", "Vue 3", "Chart.js", "FullCalendar", "Queue workers"],
     accent: "sun",
-    frame: "laptop",
+    presentation: "art",
     top: "1rem"
   },
   {
@@ -44,10 +44,10 @@ const projects = [
     category: "School project / Marine advocacy website",
     summary:
       "An SDG 14 advocacy website built to make marine conservation information easier to explore. It combines educational content, publication access, a volunteer flow, and a fully responsive UI for awareness-driven browsing.",
-    image: "/scene-preview-b.svg",
+    image: "/scene-preview-b.png",
     tags: ["HTML", "CSS", "JavaScript", "Bootstrap", "Responsive design"],
     accent: "sky",
-    frame: "default",
+    presentation: "window",
     top: "2.3rem"
   },
   {
@@ -55,10 +55,10 @@ const projects = [
     category: "Personal project / Earthquake monitoring system",
     summary:
       "A decoupled Philippine earthquake monitoring web app with a static frontend, Flask backend, PHIVOLCS-backed data flow, map overlays, intensity views, and wave-based alerts. It is built for fast situational awareness, with near real-time monitoring as the direction.",
-    image: "/scene-preview-c.svg",
+    image: "/scene-preview-c.png",
     tags: ["Flask", "Leaflet", "PHIVOLCS", "Vercel + Render", "Wave alerts"],
     accent: "leaf",
-    frame: "default",
+    presentation: "window",
     top: "3.6rem"
   }
 ];
@@ -258,14 +258,24 @@ export default function PortfolioExperience() {
                 </div>
 
                 <div className="scene-visual">
-                  <div className={`scene-window ${project.frame === "laptop" ? "frame-laptop" : ""}`}>
-                    <div className="scene-screen">
+                  <div
+                    className={`scene-window ${
+                      project.presentation === "art" ? "window-art" : "window-standard"
+                    }`}
+                  >
+                    <div
+                      className={`scene-screen ${
+                        project.presentation === "art" ? "screen-art" : "screen-standard"
+                      }`}
+                    >
                       <Image
                         src={project.image}
                         alt={`${project.title} preview`}
                         fill
                         sizes="(max-width: 980px) 100vw, 44vw"
-                        className="preview-image"
+                        className={`preview-image ${
+                          project.presentation === "art" ? "image-contain" : "image-cover"
+                        }`}
                       />
                     </div>
                   </div>
