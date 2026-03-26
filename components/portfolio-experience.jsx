@@ -33,7 +33,7 @@ const projects = [
     category: "School project / Energy management platform",
     summary:
       "A campus energy monitoring platform built to track consumption, manage appliances, and automate schedules. I worked with Laravel, Vue, PHP, and Vite to shape the interface around analytics, room scheduling, and day-to-day operational visibility.",
-    image: "/scene-preview-a.svg",
+    image: "/scene-preview-a.png",
     tags: ["Laravel 12", "Vue 3", "Chart.js", "FullCalendar", "Queue workers"],
     accent: "sun",
     top: "1rem"
@@ -276,11 +276,6 @@ export default function PortfolioExperience() {
           <aside className="process-intro" data-reveal>
             <p className="eyebrow">Process</p>
             <h2>I want the work to prove I can build, not just decorate.</h2>
-            <p>
-              The best outcome for me is something that looks considered on the
-              surface and still holds up once real data, logic, and deployment
-              are involved.
-            </p>
           </aside>
 
           <div className="process-list">
