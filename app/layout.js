@@ -52,8 +52,8 @@ const siteUrl =
     : "https://clemmentino-portfolio.vercel.app");
 
 const metadataBase = new URL(siteUrl);
-
-const socialImage = new URL("/social-cover.png", metadataBase).toString();
+const socialImagePath = "/social-cover.png?v=20260326-1";
+const socialImage = new URL(socialImagePath, metadataBase).toString();
 
 export const metadata = {
   metadataBase,
@@ -73,6 +73,8 @@ export const metadata = {
     images: [
       {
         url: socialImage,
+        secureUrl: socialImage,
+        type: "image/png",
         width: 1200,
         height: 630,
         alt: "Clemmentino Portfolio social cover"
