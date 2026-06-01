@@ -1,92 +1,53 @@
-# Clemmentino Portfolio
+# Clemm Amoguis / Clemmentino
 
-A light, interactive portfolio built with Next.js and designed for Vercel deployment.
+**Frontend-focused BSIT student building clean interfaces, practical systems, and public-tech ideas.**
 
-The current direction is:
-- portrait-led hero
-- designer-forward runway layout
-- light editorial palette
-- stacked scene-style project sections
-- responsive motion and interaction
+I am **Clemm Amoguis**, also known as **Clemmentino**. I am a **BSIT 2nd year student** at **Davao Del Norte State College**, based in **Panabo City**.
 
-## Tech Stack
+My strongest interest is frontend work: improving UI/UX, organizing content clearly, and making interfaces feel easier to use. I can also work with backend tasks using **PHP** and **Laravel**, deploy projects through **Vercel** or **Render**, and set up simple server environments when a project needs it.
 
-- Next.js 16
-- React 19
-- App Router
-- Custom CSS with a light visual system, stacked scene layouts, and interactive motion
+## What I Do
 
-## Local Development
+- Design and improve frontend interfaces
+- Build responsive websites and dashboards
+- Work with PHP and Laravel backend flows
+- Deploy web projects through cloud platforms
+- Explore government tech, monitoring tools, and disaster-warning systems
+- Use photography and videography as part of how I think about layout and presentation
 
-Install dependencies:
+## Featured Work
 
-```bash
-npm install
-```
+### Smart Campus Energy System
 
-Start the development server:
+A school energy-management platform focused on dashboards, appliance states, room scheduling, consumption visibility, and operational feedback.
 
-```bash
-npm run dev
-```
+**Stack:** Laravel, Vue, PHP, Vite, Chart.js, FullCalendar
 
-Build for production:
+### OceanWatch
 
-```bash
-npm run build
-```
+An SDG 14 advocacy website built for readable marine-conservation content, publication access, volunteer entry points, and responsive browsing.
 
-Start the production server locally:
+**Stack:** HTML, CSS, JavaScript, Bootstrap
 
-```bash
-npm run start
-```
+### LINDOL
 
-## Deploying To Vercel
+A Philippine earthquake-monitoring project with a static frontend, Flask backend, PHIVOLCS-backed data flow, map overlays, intensity views, and alert concepts.
 
-This project is already structured to work cleanly on Vercel with no special configuration.
+**Stack:** Flask, Leaflet, PHIVOLCS data flow, Vercel, Render
 
-### Option 1: Deploy from Git
+## Skills
 
-1. Push this repository to GitHub, GitLab, or Bitbucket.
-2. Open Vercel and create a new project.
-3. Import the repository.
-4. Let Vercel detect the framework as `Next.js`.
-5. Click `Deploy`.
+**Frontend:** HTML, CSS, JavaScript, React, Vue, responsive design, UI/UX  
+**Backend:** PHP, Laravel, Flask, API integration  
+**Tools:** Git, GitHub, Vercel, Render, Vite  
+**Creative:** Photography, videography, visual editing, layout composition
 
-### Option 2: Deploy with the Vercel CLI
+## Current Direction
 
-```bash
-npm i -g vercel
-vercel
-```
+I am building toward stronger frontend work while exploring systems that can be useful in real situations, especially public-interest tools, monitoring platforms, and disaster-warning ideas.
 
-## Project Structure
+## Contact
 
-```text
-app/
-  globals.css
-  layout.js
-  page.js
-components/
-  portfolio-experience.jsx
-```
-
-## Files To Customize First
-
-If you want to make the portfolio fully yours, start here:
-
-- `components/portfolio-experience.jsx`
-  Update the hero copy, featured projects, capabilities, contact email, and section content.
-- `app/layout.js`
-  Update the metadata title and description for search and link previews.
-- `app/globals.css`
-  Adjust colors, spacing, typography feel, and motion styling.
-- `public/me.jpg`
-  Replace the portrait if you want a different hero image.
-
-## Notes
-
-- The current project sections still use placeholder names and placeholder case studies.
-- The contact email is a placeholder and should be replaced before deployment.
-- The build has already been verified locally with `npm run build`.
+- Email: `mamoamoguis@gmail.com`
+- GitHub: [github.com/Clemmentino](https://github.com/Clemmentino)
+- Portfolio: [clemmentino-portfolio.vercel.app](https://clemmentino-portfolio.vercel.app)

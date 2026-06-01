@@ -7,14 +7,14 @@ const THEME_STORAGE_KEY = "clemmentino-theme-preference";
 
 const themeOptions = [
   { value: "auto", label: "Auto", swatch: "auto" },
-  { value: "light", label: "White", swatch: "light" },
-  { value: "dawn", label: "Grey", swatch: "dawn" },
+  { value: "light", label: "Light", swatch: "light" },
+  { value: "dawn", label: "Soft", swatch: "dawn" },
   { value: "dark", label: "Dark", swatch: "dark" }
 ];
 
 const resolvedThemeLabels = {
-  light: "White",
-  dawn: "Grey",
+  light: "Light",
+  dawn: "Soft",
   dark: "Dark"
 };
 
@@ -62,26 +62,28 @@ function storeThemePreference(preference) {
 }
 
 const tickerItems = [
-  "PHP ",
+  "Frontend interfaces ",
+  "PHP and Laravel ",
+  "Practical systems ",
   "UI design ",
   "Photography ",
-  "Videography ",
-  "Frontend systems ",
-  "Government tech interest "
+  "Public-interest tech "
 ];
+
+const tickerLoopItems = Array.from({ length: 6 }, () => tickerItems).flat();
 
 const metrics = [
   {
-    label: "Focus",
-    value: "Frontend builds that feel clear, fast, and intentional"
+    label: "Primary focus",
+    value: "Frontend interfaces that are easy to scan, responsive, and useful"
   },
   {
-    label: "Also brings",
-    value: "Backend connection work when the project needs the full flow"
+    label: "Stack range",
+    value: "Laravel, PHP, Vue, Flask, JavaScript, and deployment handoffs"
   },
   {
-    label: "Interested in",
-    value: "Websites, frontend roles, and government tech with real-world use"
+    label: "Direction",
+    value: "Monitoring tools, public-interest systems, and polished websites"
   }
 ];
 
@@ -90,7 +92,7 @@ const projects = [
     title: "Smart Campus Energy System",
     category: "School project / Energy management platform",
     summary:
-      "A campus energy monitoring platform built to track consumption, manage appliances, and automate schedules. I worked with Laravel, Vue, PHP, and Vite to shape the interface around analytics, room scheduling, and day-to-day operational visibility.",
+      "A campus energy platform for tracking consumption, managing appliances, and scheduling room usage. I helped shape the Laravel and Vue interface around dashboards, appliance states, calendar views, and clear operational feedback.",
     image: "/scene-preview-a.png",
     tags: ["Laravel 12", "Vue 3", "Chart.js", "FullCalendar", "Queue workers"],
     accent: "sun",
@@ -101,7 +103,7 @@ const projects = [
     title: "OceanWatch",
     category: "School project / Marine advocacy website",
     summary:
-      "An SDG 14 advocacy website built to make marine conservation information easier to explore. It combines educational content, publication access, a volunteer flow, and a fully responsive UI for awareness-driven browsing.",
+      "An SDG 14 advocacy site designed for straightforward learning and participation. The build organizes marine conservation content, publications, and volunteer entry points into a responsive browsing experience.",
     image: "/scene-preview-b.png",
     tags: ["HTML", "CSS", "JavaScript", "Bootstrap", "Responsive design"],
     accent: "sky",
@@ -112,7 +114,7 @@ const projects = [
     title: "LINDOL",
     category: "Personal project / Earthquake monitoring system",
     summary:
-      "A decoupled Philippine earthquake monitoring web app with a static frontend, Flask backend, PHIVOLCS-backed data flow, map overlays, intensity views, and wave-based alerts. It is built for fast situational awareness, with near real-time monitoring as the direction.",
+      "A Philippine earthquake monitoring app with a static frontend, Flask backend, PHIVOLCS-backed data flow, map overlays, intensity views, and alert concepts. The goal is fast situational awareness with a clean path toward near real-time monitoring.",
     image: "/scene-preview-c.png",
     tags: ["Flask", "Leaflet", "PHIVOLCS", "Vercel + Render", "Wave alerts"],
     accent: "leaf",
@@ -123,37 +125,61 @@ const projects = [
 
 const processSteps = [
   {
-    title: "Start with the frontend experience",
+    title: "Design the page around the task",
     copy:
-      "I care a lot about how a page feels to use, so layout, motion, and interface clarity usually come first."
+      "I start by asking what someone needs to understand first, then shape the layout, hierarchy, and states around that flow."
   },
   {
-    title: "Connect the system cleanly",
+    title: "Connect the full flow",
     copy:
-      "I can work across the handoff between frontend and backend, especially in split deployments like Vercel for UI and Render for APIs."
+      "When a project needs more than static screens, I can wire the frontend to APIs, data views, auth flows, and deployment targets."
   },
   {
-    title: "Build for actual use cases",
+    title: "Keep it useful after the demo",
     copy:
-      "What interests me most are projects that need to be useful in the real world, especially monitoring, public-interest, and government-adjacent systems."
+      "I like projects that have a practical reason to exist: monitoring, alerts, public information, and tools people can come back to."
   }
 ];
 
 const capabilityNotes = [
   {
-    title: "Frontend and UI",
+    title: "Frontend craft",
     copy:
-      "I focus most on the frontend: layout, interface decisions, responsiveness, and making the whole build feel more thought-through."
+      "Layout, responsive behavior, interface states, and visual rhythm are the parts of the build I care about most."
   },
   {
-    title: "PHP and backend integration",
+    title: "Backend connection",
     copy:
-      "I am comfortable wiring frontend and backend together, especially in web stacks where the interface and server need to stay cleanly connected."
+      "I can connect screens to server logic and data sources when the project needs the complete experience to work."
   },
   {
-    title: "Visual work too",
+    title: "Visual eye",
     copy:
-      "UI design, photography, editing, and videography all feed into how I think about presentation and visual quality."
+      "Photography, editing, and videography influence how I compose pages, present projects, and make details feel intentional."
+  }
+];
+
+const aboutFacts = [
+  { label: "Name", value: "Clemm Amoguis / Clemmentino" },
+  { label: "Current", value: "BSIT 2nd Year at DNSC" },
+  { label: "Based in", value: "Panabo City, Davao del Norte" }
+];
+
+const aboutStrengths = [
+  {
+    title: "Frontend and UI/UX",
+    copy:
+      "The part I enjoy most is improving screens: layout, spacing, readability, responsive behavior, and the small details that make an interface easier to trust."
+  },
+  {
+    title: "Backend and deployment",
+    copy:
+      "I can work with PHP and Laravel, connect projects to backend logic, deploy through Vercel or Render, and set up consumer computers as simple servers when needed."
+  },
+  {
+    title: "Visual and public-tech interest",
+    copy:
+      "Photography and videography shape how I look at composition. I'm also drawn to government tech and disaster-warning systems because useful tools matter."
   }
 ];
 
@@ -265,6 +291,7 @@ export default function PortfolioExperience() {
           </div>
           <div className="topbar-actions">
             <nav className="topnav" aria-label="Section navigation">
+              <a href="#about">About</a>
               <a href="#work">Work</a>
               <a href="#process">Process</a>
               <a href="#contact">Contact</a>
@@ -301,18 +328,17 @@ export default function PortfolioExperience() {
         <div className="hero-panel">
           <div className="hero-copy" data-reveal>
             <p className="eyebrow">Frontend-focused full-stack developer</p>
-            <h1>Built to work. Made to feel clear.</h1>
+            <h1>Clear interfaces for useful systems.</h1>
             <p className="lede">
-              I'm Clemmentino, a frontend-focused full-stack developer who cares
-              about websites that feel clear, modern, and actually useful with the help of AI.
-              Frontend is where I'm strongest, but I can handle the backend
-              connection too, especially for systems that need a real working
-              flow.
+              I'm Clemmentino, a developer who likes building interfaces that
+              feel clean, direct, and grounded in real use. Frontend is where I
+              am strongest, but I can also handle the backend connections that
+              make a project work end to end.
             </p>
             <p className="lede">
-              I'm especially interested in websites, frontend roles, and
-              government tech, including near real-time earthquake and warning
-              systems.
+              My best work sits between design and function: websites, dashboard
+              flows, monitoring tools, and public-interest systems that need to
+              be easy to understand quickly.
             </p>
 
             <div className="hero-actions">
@@ -333,29 +359,12 @@ export default function PortfolioExperience() {
               ))}
             </div>
           </div>
-
-          <div className="portrait-stage" data-reveal>
-            <div className="sun-disc" aria-hidden="true" />
-            <div className="portrait-aura" aria-hidden="true" />
-            <figure className="portrait-cutout">
-              <Image
-                src="/me.jpg"
-                alt="Portrait of Clemmentino"
-                fill
-                priority
-                sizes="(max-width: 980px) 100vw, 42vw"
-                className="portrait-image"
-              />
-            </figure>
-            <div className="name-ribbon">Clemmentino / frontend-focused full-stack developer</div>
-            <div className="note-badge">miss na miss kona yung baby ko</div>
-          </div>
         </div>
       </section>
 
       <section className="ticker-section" aria-label="Portfolio highlights">
         <div className="ticker-track">
-          {[...tickerItems, ...tickerItems].map((item, index) => (
+          {tickerLoopItems.map((item, index) => (
             <span className="ticker-item" key={`${item}-${index}`}>
               {item}
             </span>
@@ -363,10 +372,87 @@ export default function PortfolioExperience() {
         </div>
       </section>
 
+      <section className="about section-frame" id="about">
+        <div className="about-heading" data-reveal>
+          <p className="eyebrow">About Me</p>
+          <h2>Student developer, frontend-focused, and practical about systems.</h2>
+          <p>
+            A quick profile of who I am, what I can build, and the kind of work
+            I want this portfolio to represent.
+          </p>
+        </div>
+
+        <div className="about-layout">
+          <div className="about-portrait" data-reveal>
+            <figure className="about-photo">
+              <Image
+                src="/me.jpg"
+                alt="Portrait of Clemmentino"
+                fill
+                sizes="(max-width: 980px) 100vw, 34vw"
+                className="portrait-image"
+              />
+            </figure>
+            <div className="about-photo-caption">
+              Clemm Amoguis / aka Clemmentino
+            </div>
+          </div>
+
+          <div className="about-content" data-reveal>
+            <div className="about-profile-card">
+              <span className="about-label">Profile</span>
+              <h3>I'm Clemm Amoguis.</h3>
+              <p>
+                Online, I use the name Clemmentino. I'm a BSIT 2nd year student
+                at Davao Del Norte State College, based in Panabo City.
+              </p>
+            </div>
+
+            <dl className="about-facts">
+              {aboutFacts.map((fact) => (
+                <div className="about-fact" key={fact.label}>
+                  <dt>{fact.label}</dt>
+                  <dd>{fact.value}</dd>
+                </div>
+              ))}
+            </dl>
+
+            <div className="about-story">
+              <p>
+                I can handle backend work with PHP and Laravel, deploy projects
+                through cloud platforms like Vercel and Render, and set up
+                consumer-type computers to run as simple servers. That helps me
+                understand the full flow of a project, not only the screen.
+              </p>
+              <p>
+                Still, the part I enjoy most is designing for the frontend:
+                improving UI/UX, cleaning up layouts, and making information
+                feel easier to read. My hobbies in photography and videography
+                also influence how I think about visual quality and presentation.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="about-strength-grid">
+          {aboutStrengths.map((item) => (
+            <article className="about-strength-card" data-reveal key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.copy}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="scenes section-frame" id="work">
         <div className="section-intro" data-reveal>
           <p className="eyebrow">Selected Work</p>
-          <h2>From school systems to a personal earthquake-monitoring project.</h2>
+          <h2>Projects with clearer purpose, stronger hierarchy, and real data behind them.</h2>
+          <p>
+            A short scroll through the builds that best show where I am headed:
+            practical web systems, civic technology ideas, and interfaces that
+            need to explain information quickly.
+          </p>
         </div>
 
         <div className="scene-stack">
@@ -424,7 +510,7 @@ export default function PortfolioExperience() {
         <div className="process-layout">
           <aside className="process-intro" data-reveal>
             <p className="eyebrow">Process</p>
-            <h2>I want the work to prove I can build, not just decorate.</h2>
+            <h2>The goal is not decoration. It is clarity that keeps working.</h2>
           </aside>
 
           <div className="process-list">
@@ -454,10 +540,11 @@ export default function PortfolioExperience() {
         <div className="contact-panel" data-reveal>
           <div className="contact-copy">
             <p className="eyebrow">Contact</p>
-            <h2>I'm building toward stronger frontend work and public-interest systems.</h2>
+            <h2>I'm open to frontend work, websites, and systems with public value.</h2>
             <p>
-              LINDOL is the current personal project. After that, the next build
-              in line is a Local Flood Warning System.
+              LINDOL is my current personal project. The next idea in line is a
+              Local Flood Warning System, continuing the same direction: useful,
+              readable tools for urgent information.
             </p>
           </div>
 
