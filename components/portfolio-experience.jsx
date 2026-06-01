@@ -207,6 +207,62 @@ const aboutStrengths = [
   }
 ];
 
+const techGroups = [
+  {
+    title: "Frontend",
+    items: [
+      { name: "React", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
+      { name: "Next.js", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg", invertDark: true },
+      { name: "Vue.js", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" },
+      { name: "JavaScript", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" },
+      { name: "TypeScript", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" },
+      { name: "HTML5", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" },
+      { name: "CSS3", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" },
+      { name: "Tailwind", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
+      { name: "Bootstrap", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" }
+    ]
+  },
+  {
+    title: "Backend",
+    items: [
+      { name: "Node.js", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" },
+      { name: "Express", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg", invertDark: true },
+      { name: "Python", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
+      { name: "Django", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg" },
+      { name: "Flask", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg", invertDark: true },
+      { name: "PHP", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" },
+      { name: "Laravel", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" },
+      { name: "Java", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" },
+      { name: "Spring", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" }
+    ]
+  },
+  {
+    title: "Database",
+    items: [
+      { name: "MySQL", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" },
+      { name: "PostgreSQL", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
+      { name: "MongoDB", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" },
+      { name: "Firebase", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-plain.svg" },
+      { name: "Supabase", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" }
+    ]
+  },
+  {
+    title: "AI & Cloud",
+    items: [
+      { name: "AWS", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg", invertDark: true },
+      { name: "GCP", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg" },
+      { name: "Docker", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
+      { name: "Kubernetes", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg" },
+      { name: "Vercel", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg", invertDark: true },
+      { name: "OpenAI", url: "https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg", invertDark: true },
+      { name: "Hugging Face", url: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg" },
+      { name: "Linux", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" },
+      { name: "Git", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
+      { name: "GitHub", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg", invertDark: true }
+    ]
+  }
+];
+
 export default function PortfolioExperience() {
   const [themePreference, setThemePreference] = useState("auto");
   const [resolvedTheme, setResolvedTheme] = useState("light");
@@ -489,6 +545,36 @@ export default function PortfolioExperience() {
               <p>{item.copy}</p>
             </article>
           ))}
+        </div>
+
+        <div className="about-stack-section" data-reveal style={{ marginTop: '4rem' }}>
+          <h3 style={{ fontFamily: 'var(--font-display), serif', fontSize: 'clamp(1.85rem, 3vw, 2.45rem)', marginBottom: '2.5rem', fontWeight: 600 }}>Tech Stack</h3>
+          
+          <div style={{ display: 'grid', gap: '3rem' }}>
+            {techGroups.map((group) => (
+              <div key={group.title} className="tech-logo-group">
+                <h4 style={{ fontSize: '1rem', color: 'var(--text-dim)', marginBottom: '1rem', letterSpacing: '0.05em', textTransform: 'uppercase' }}>{group.title}</h4>
+                <div className="tech-logo-grid" style={{ marginTop: 0 }}>
+                  {group.items.map((tech) => (
+                    <div className="tech-logo-item" key={tech.name}>
+                      <div className="tech-logo-img-wrapper">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={tech.url}
+                          alt={`${tech.name} logo`}
+                          className={`tech-logo-img ${tech.invertDark ? 'tech-logo-img-invert' : ''}`}
+                          width={36}
+                          height={36}
+                          loading="lazy"
+                        />
+                      </div>
+                      <span className="tech-logo-label">{tech.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
