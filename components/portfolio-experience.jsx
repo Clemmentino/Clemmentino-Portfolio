@@ -89,6 +89,28 @@ const metrics = [
 
 const projects = [
   {
+    title: "DataBook Trimester",
+    category: "Commissioned system / San Vicente National High School",
+    summary:
+      "A commissioned academic records platform for my alma mater, San Vicente National High School. It uses a trimester model and supports grade encoding, learner records, SF10/report-card flows, honors, certificates, attendance, tasks, notifications, role-based access, and operational security monitoring.",
+    image: "/Phone_and_Laptop_Demo_Databook.png",
+    tags: ["Laravel 12", "Next.js 16", "React 19", "TypeScript", "MySQL"],
+    accent: "sky",
+    presentation: "art",
+    top: "1rem"
+  },
+  {
+    title: "Pakisoli",
+    category: "DSA project / Campus lost-and-found system",
+    summary:
+      "A campus lost-and-found platform for posting lost and found items, browsing item records, managing claims, viewing campus locations, and handling admin review flows. The DSA version uses a Spring Boot backend and includes radix-sort-based utility work for structured item handling.",
+    image: "/Macbook-Air-pakisoli-dsa-ads-project.vercel.app.png",
+    tags: ["Next.js 16", "Spring Boot", "Java 21", "JWT", "Radix Sort"],
+    accent: "rose",
+    presentation: "art",
+    top: "2.1rem"
+  },
+  {
     title: "Smart Campus Energy System",
     category: "School project / Energy management platform",
     summary:
@@ -97,7 +119,7 @@ const projects = [
     tags: ["Laravel 12", "Vue 3", "Chart.js", "FullCalendar", "Queue workers"],
     accent: "sun",
     presentation: "art",
-    top: "1rem"
+    top: "3.2rem"
   },
   {
     title: "OceanWatch",
@@ -108,7 +130,7 @@ const projects = [
     tags: ["HTML", "CSS", "JavaScript", "Bootstrap", "Responsive design"],
     accent: "sky",
     presentation: "art",
-    top: "2.3rem"
+    top: "4.3rem"
   },
   {
     title: "LINDOL",
@@ -119,7 +141,7 @@ const projects = [
     tags: ["Flask", "Leaflet", "PHIVOLCS", "Vercel + Render", "Wave alerts"],
     accent: "leaf",
     presentation: "art",
-    top: "3.6rem"
+    top: "5.4rem"
   }
 ];
 

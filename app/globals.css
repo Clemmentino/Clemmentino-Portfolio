@@ -967,6 +967,14 @@ ul {
     var(--paper);
 }
 
+.accent-rose {
+  background:
+    radial-gradient(circle at 16% 18%, var(--rose-soft), transparent 30%),
+    linear-gradient(135deg, var(--peach-soft), transparent 48%),
+    radial-gradient(circle at 88% 84%, var(--sky-scene-soft), transparent 24%),
+    var(--paper);
+}
+
 .process-layout {
   display: grid;
   grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
