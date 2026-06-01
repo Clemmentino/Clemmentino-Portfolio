@@ -72,6 +72,8 @@ const tickerItems = [
 
 const tickerLoopItems = Array.from({ length: 6 }, () => tickerItems).flat();
 
+const profileImage = "/me.jpg?v=20260601";
+
 const metrics = [
   {
     label: "Primary focus",
@@ -89,11 +91,11 @@ const metrics = [
 
 const projects = [
   {
-    title: "DataBook Trimester",
+    title: "DataBook",
     category: "Commissioned system / San Vicente National High School",
     summary:
       "A commissioned academic records platform for my alma mater, San Vicente National High School. It uses a trimester model and supports grade encoding, learner records, SF10/report-card flows, honors, certificates, attendance, tasks, notifications, role-based access, and operational security monitoring.",
-    image: "/Phone_and_Laptop_Demo_Databook.png",
+    image: "/Databook.png",
     tags: ["Laravel 12", "Next.js 16", "React 19", "TypeScript", "MySQL"],
     accent: "sky",
     presentation: "art",
@@ -111,6 +113,17 @@ const projects = [
     top: "2.1rem"
   },
   {
+    title: "LINDOL",
+    category: "Personal project / Earthquake monitoring system",
+    summary:
+      "A Philippine earthquake monitoring app with a static frontend, Flask backend, PHIVOLCS-backed data flow, map overlays, intensity views, and alert concepts. The goal is fast situational awareness with a clean path toward near real-time monitoring.",
+    image: "/scene-preview-c.png",
+    tags: ["Flask", "Leaflet", "PHIVOLCS", "Vercel + Render", "Wave alerts"],
+    accent: "leaf",
+    presentation: "art",
+    top: "3.2rem"
+  },
+  {
     title: "Smart Campus Energy System",
     category: "School project / Energy management platform",
     summary:
@@ -119,7 +132,7 @@ const projects = [
     tags: ["Laravel 12", "Vue 3", "Chart.js", "FullCalendar", "Queue workers"],
     accent: "sun",
     presentation: "art",
-    top: "3.2rem"
+    top: "4.3rem"
   },
   {
     title: "OceanWatch",
@@ -129,17 +142,6 @@ const projects = [
     image: "/scene-preview-b.png",
     tags: ["HTML", "CSS", "JavaScript", "Bootstrap", "Responsive design"],
     accent: "sky",
-    presentation: "art",
-    top: "4.3rem"
-  },
-  {
-    title: "LINDOL",
-    category: "Personal project / Earthquake monitoring system",
-    summary:
-      "A Philippine earthquake monitoring app with a static frontend, Flask backend, PHIVOLCS-backed data flow, map overlays, intensity views, and alert concepts. The goal is fast situational awareness with a clean path toward near real-time monitoring.",
-    image: "/scene-preview-c.png",
-    tags: ["Flask", "Leaflet", "PHIVOLCS", "Vercel + Render", "Wave alerts"],
-    accent: "leaf",
     presentation: "art",
     top: "5.4rem"
   }
@@ -208,6 +210,7 @@ const aboutStrengths = [
 export default function PortfolioExperience() {
   const [themePreference, setThemePreference] = useState("auto");
   const [resolvedTheme, setResolvedTheme] = useState("light");
+  const [themeMenuOpen, setThemeMenuOpen] = useState(false);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -299,7 +302,11 @@ export default function PortfolioExperience() {
     storeThemePreference(nextPreference);
     setThemePreference(nextPreference);
     setResolvedTheme(applyTheme(nextPreference));
+    setThemeMenuOpen(false);
   };
+
+  const activeThemeOption =
+    themeOptions.find((option) => option.value === themePreference) || themeOptions[0];
 
   return (
     <main className="page-shell">
@@ -319,12 +326,31 @@ export default function PortfolioExperience() {
               <a href="#contact">Contact</a>
             </nav>
             <div className="theme-control">
-              <p className="theme-caption">
-                {themePreference === "auto"
-                  ? `Auto now: ${resolvedThemeLabels[resolvedTheme]}`
-                  : `Manual: ${resolvedThemeLabels[resolvedTheme]}`}
-              </p>
-              <div className="theme-toggle" role="group" aria-label="Theme switcher">
+              <button
+                type="button"
+                className="theme-trigger"
+                onClick={() => setThemeMenuOpen((open) => !open)}
+                aria-expanded={themeMenuOpen}
+                aria-controls="theme-options"
+              >
+                <span
+                  className={`theme-swatch theme-swatch-${activeThemeOption.swatch}`}
+                  aria-hidden="true"
+                />
+                <span className="theme-trigger-text">
+                  <span className="theme-trigger-label">
+                    {themePreference === "auto" ? "Auto theme" : "Theme"}
+                  </span>
+                  <span>{activeThemeOption.label}</span>
+                </span>
+                <span className="theme-chevron" aria-hidden="true" />
+              </button>
+              <div
+                className={`theme-toggle ${themeMenuOpen ? "is-open" : ""}`}
+                id="theme-options"
+                role="group"
+                aria-label="Theme switcher"
+              >
                 {themeOptions.map((option) => (
                   <button
                     type="button"
@@ -367,8 +393,8 @@ export default function PortfolioExperience() {
               <a href="#work" className="primary-link">
                 Enter selected work
               </a>
-              <a href="#contact" className="secondary-link">
-                Contact me
+              <a href="#about" className="secondary-link">
+                About me
               </a>
             </div>
 
@@ -408,7 +434,7 @@ export default function PortfolioExperience() {
           <div className="about-portrait" data-reveal>
             <figure className="about-photo">
               <Image
-                src="/me.jpg"
+                src={profileImage}
                 alt="Portrait of Clemmentino"
                 fill
                 sizes="(max-width: 980px) 100vw, 34vw"
@@ -514,6 +540,8 @@ export default function PortfolioExperience() {
                         src={project.image}
                         alt={`${project.title} preview`}
                         fill
+                        loading={index === 0 ? "eager" : "lazy"}
+                        fetchPriority={index === 0 ? "high" : "auto"}
                         sizes="(max-width: 980px) 100vw, 44vw"
                         className={`preview-image ${
                           project.presentation === "art" ? "image-contain" : "image-cover"
@@ -564,16 +592,17 @@ export default function PortfolioExperience() {
             <p className="eyebrow">Contact</p>
             <h2>I'm open to frontend work, websites, and systems with public value.</h2>
             <p>
-              LINDOL is my current personal project. The next idea in line is a
-              Local Flood Warning System, continuing the same direction: useful,
-              readable tools for urgent information.
+              DataBook is my latest ongoing project: a commissioned academic
+              records platform for San Vicente National High School. It continues
+              the direction I care about most: useful, readable systems that
+              solve real operational problems.
             </p>
           </div>
 
           <div className="contact-side">
             <div className="contact-thumb">
               <Image
-                src="/me.jpg"
+                src={profileImage}
                 alt="Portrait thumbnail of Clemmentino"
                 fill
                 sizes="110px"

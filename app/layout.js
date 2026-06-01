@@ -1,4 +1,5 @@
 import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
+import Script from "next/script";
 
 import "./globals.css";
 
@@ -102,10 +103,14 @@ export default function RootLayout({ children }) {
       className={`${plusJakarta.variable} ${fraunces.variable}`}
       suppressHydrationWarning
     >
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
-      </head>
-      <body>{children}</body>
+      <body>
+        <Script
+          id="theme-init"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: themeInitScript }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
